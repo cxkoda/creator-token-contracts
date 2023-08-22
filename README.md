@@ -379,7 +379,7 @@ contract AdventureERC721CWithMutableMinterRoyalties is AdventureERC721C, Mutable
     ...
 
     function supportsInterface(bytes4 interfaceId) public view virtual override(AdventureERC721C, MutableMinterRoyalties) returns (bool) {
-        return super.supportsInterface(interfaceId);
+        return AdventureERC721C.supportsInterface(interfaceId) || MutableMinterRoyalties.supportsInterface(interfaceId);
     }
 
     ...
